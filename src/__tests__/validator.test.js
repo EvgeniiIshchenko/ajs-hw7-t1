@@ -13,13 +13,22 @@ test.each([
         '3test-name_homework', false
     ],
     [
-        'test123-name_homework', false
+        'test123-name_homework', true
     ],
     [
         '_test-name', false
     ],
     [
         '-test-name', false
+    ],
+    [
+        'Аtest-name', false
+    ],
+    [
+        '.test-name', false
+    ],
+    [
+        '=test-name', false
     ],
     [
         'test-name_homework1', false
@@ -29,6 +38,15 @@ test.each([
     ],
     [
         'test-name_homework_', false
+    ],
+    [
+        'test-name_homeworkА', false
+    ],
+    [
+        'test-name_homework=', false
+    ],
+    [
+        'test-name_homework.', false
     ],
 ])('Testing name validation', (name, expected) => {
     const result = userName.validateUsername(name);
